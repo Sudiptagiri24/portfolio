@@ -1,5 +1,5 @@
 streamlit==1.47.0
 streamlit-option-menu
 streamlit-lottie
-Pillow==10.2.0
+Pillow==9.5.0
 requests==2.31.0

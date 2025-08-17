@@ -8,7 +8,7 @@ from PIL import Image
 st.set_page_config(page_title="Sudipta Giri's Portfolio", layout='wide', page_icon="🦾")
 
 # Correct path to your profile image
-profile_path = "/Users/sudiptagiri/Desktop/ML_Projects/Portfolio/images/profile.jpg"
+profile_path = "images/profile.jpg"
 
 # Load and encode the image once
 with open(profile_path, "rb") as f:

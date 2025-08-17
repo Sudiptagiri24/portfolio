@@ -43,9 +43,9 @@ lottie_coder = load_lottieurl("https://lottie.host/7c9818d3-cd77-49e4-ad3e-4b902
 lottie_contact = load_lottieurl("https://lottie.host/d01c507e-8703-4630-8f23-d363914ec43c/KDLNJvpwQh.json")
 
 # Load project images
-image1 = Image.open("/Users/sudiptagiri/Desktop/ML_Projects/Portfolio/images/Screenshot1.png")
-image2 = Image.open("/Users/sudiptagiri/Desktop/ML_Projects/Portfolio/images/Screenshot2.png")
-image3 = Image.open("/Users/sudiptagiri/Desktop/ML_Projects/Portfolio/images/Screenshot3.png")
+image1 = Image.open("images/Screenshot1.png")
+image2 = Image.open("images/Screenshot2.png")
+image3 = Image.open("images/Screenshot3.png")
 
 
 

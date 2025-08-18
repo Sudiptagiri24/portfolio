@@ -46,6 +46,8 @@ lottie_contact = load_lottieurl("https://lottie.host/d01c507e-8703-4630-8f23-d36
 image1 = Image.open("images/Screenshot1.png")
 image2 = Image.open("images/Screenshot2.png")
 image3 = Image.open("images/Screenshot3.png")
+image4 = Image.open("images/Screenshot4.png")
+
 
 
 
@@ -130,6 +132,24 @@ with st.container():
     if selected == 'Projects':
         with st.container():
             st.header("My Projects")
+            st.write("---")
+
+            # Project 4
+            col1, col2 = st.columns([1, 2])
+
+            with col1:
+                st.image(image4, caption="AssistAI", use_container_width=True)
+
+            with col2:
+                st.subheader("AssistAI Chat Application")
+                st.write("""
+                Built a real-time AI chat application using Streamlit and Ollama API. 
+                Users can chat with an AI assistant, with responses streamed live and chat history maintained.
+                """)
+                st.markdown("[Use App - Coming Soon](#) | [GitHub Repo](https://github.com/Sudiptagiri24/AssistAI)")
+
+                st.write("**Technologies:** Python, Streamlit, Requests, Ollama API")
+
             st.write("---")
 
             # Project 1

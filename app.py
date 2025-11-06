@@ -159,6 +159,14 @@ if selected == 'Projects':
                 "tech": "Python, Streamlit, LangChain, Hugging Face, YouTube Transcript API"
             },
             {
+                "title": "Object Detection with YOLO",
+                "image": "images/object_detection_yolo.png",
+                "description": "This project performs object detection and annotation on images using a custom-trained YOLO model, along with the Supervision library for visualization.",
+                "github": "https://github.com/yourusername/youtube-transcript-chatbot",
+                "demo": "https://your-streamlit-app-url.streamlit.app/",
+                "tech": "YOLO, Flask, Deep Learning, OpenCV, Computer Vision"
+            },
+            {
                 "title": "Movie Recommender System",
                 "image": "images/Screenshot1.png",
                 "description": "Personalized movie recommendations using collaborative and content-based filtering.",

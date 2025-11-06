@@ -4,6 +4,11 @@ from streamlit_option_menu import option_menu
 import requests
 from streamlit_lottie import st_lottie
 from PIL import Image
+import base64
+
+def get_base64_image(image_path):
+    with open(image_path, "rb") as img_file:
+        return base64.b64encode(img_file.read()).decode()
 
 st.set_page_config(page_title="Sudipta Giri's Portfolio", layout='wide', page_icon="🦾")
 
@@ -129,89 +134,88 @@ with st.container():
 
         st.write("---")
 
-    if selected == 'Projects':
-        with st.container():
-            st.header("My Projects")
-            st.write("---")
+    
+if selected == 'Projects':
+    with st.container():
+        st.header("🚀 My Projects")
+        st.write("---")
 
-            # Project 4
-            col1, col2 = st.columns([1, 2])
+        # Define project data
+        projects = [
+            {
+                "title": "AssistAI Chat Application",
+                "image": "images/Screenshot4.png",
+                "description": "Built a real-time AI chat application using Streamlit and Ollama API. Users can chat with an AI assistant, with responses streamed live and chat history maintained.",
+                "github": "https://github.com/Sudiptagiri24/AssistAI",
+                "demo": "#",
+                "tech": "Python, Streamlit, Requests, Ollama API"
+            },
+            {
+                "title": "YouTube Transcript Chatbot",
+                "image": "images/youtube_transcript.png",
+                "description": "An AI-powered chatbot that extracts and analyzes YouTube video transcripts using LangChain and RAG. Users can ask questions and get intelligent answers from any video.",
+                "github": "https://github.com/yourusername/youtube-transcript-chatbot",
+                "demo": "https://your-streamlit-app-url.streamlit.app/",
+                "tech": "Python, Streamlit, LangChain, Hugging Face, YouTube Transcript API"
+            },
+            {
+                "title": "Movie Recommender System",
+                "image": "images/Screenshot1.png",
+                "description": "Personalized movie recommendations using collaborative and content-based filtering.",
+                "github": "https://github.com/Sudiptagiri24/movie-recommender-system",
+                "demo": "https://mujyft76zcztupkuoxzigv.streamlit.app/",
+                "tech": "Python, Pandas, Scikit-Learn, Streamlit"
+            },
+            {
+                "title": "Fashion Recommender System",
+                "image": "images/Screenshot2.png",
+                "description": "Deep learning-powered system that finds visually similar fashion items using ResNet50 embeddings.",
+                "github": "https://github.com/Sudiptagiri24/Fashion-recommender-system",
+                "demo": "https://mainpy-kwxlg4capjfb7kaqknlwlm.streamlit.app/",
+                "tech": "TensorFlow, Streamlit, scikit-learn, Google Drive"
+            },
+            {
+                "title": "Startup Funding Dashboard",
+                "image": "images/Screenshot3.png",
+                "description": "Interactive dashboard visualizing startup funding trends across India with investor insights and year-wise breakdowns.",
+                "github": "https://github.com/Sudiptagiri24/startup-dashboard",
+                "demo": "https://iswjcdzc4zzeabay4becrb.streamlit.app/",
+                "tech": "Python, Pandas, Matplotlib, Streamlit"
+            }
+        ]
 
-            with col1:
-                st.image(image4, caption="AssistAI", use_container_width=True)
+        # Display projects in grid
+        cols = st.columns(3)
+        for index, project in enumerate(projects):
+            img_base64 = get_base64_image(project["image"])
 
-            with col2:
-                st.subheader("AssistAI Chat Application")
-                st.write("""
-                Built a real-time AI chat application using Streamlit and Ollama API. 
-                Users can chat with an AI assistant, with responses streamed live and chat history maintained.
-                """)
-                st.markdown("[Use App - Coming Soon](#) | [GitHub Repo](https://github.com/Sudiptagiri24/AssistAI)")
-
-                st.write("**Technologies:** Python, Streamlit, Requests, Ollama API")
-
-            st.write("---")
-
-            # Project 1
-            col1, col2 = st.columns([1, 2])
-
-            with col1:
-                st.image(image1, caption="Movie Recommender System", use_container_width=True)
-
-            with col2:
-                st.subheader("Movie Recommender System")
-                st.write("""
-    Built a personalized movie recommendation engine using collaborative filtering and content-based methods. 
-    The system predicts user preferences and suggests movies accordingly.
-    """)
-                st.markdown("[Use App](https://mujyft76zcztupkuoxzigv.streamlit.app/) | [GitHub Repo](https://github.com/Sudiptagiri24/movie-recommender-system)")
-                st.write("**Technologies:** Python, Pandas, Scikit-Learn, Streamlit")
-
-            st.write("---")
-
-            # Project 2
-            col3, col4 = st.columns([1, 2])
-
-            with col3:
-                st.image(image2, caption="Movie Recommender System", use_container_width=True)
-
-            with col4:
-                st.subheader("Fashion Recommender System")
-                st.write("""
-                A deep learning-powered fashion recommendation system that helps users find visually similar fashion items using image embeddings and a ResNet50 model. Built with Streamlit and TensorFlow, deployed live on the cloud.
-                """)
-                st.markdown(
-                    "[Use App](https://mainpy-kwxlg4capjfb7kaqknlwlm.streamlit.app/) | [GitHub Repo](https://github.com/Sudiptagiri24/Fashion-recommender-system)")
-                st.write("**Tech Stack:** Streamlit, TensorFlow (ResNet50), scikit-learn (k-NN), Google Drive embeddings, Streamlit Community Cloud")
-
-            st.write("---")
-
-            # Project3 : Startup Funding Dashboard
-            col1, col2 = st.columns([1, 2])
-
-            with col1:
-                st.image(image3, caption="Startup Funding Dashboard",
-                         use_container_width=True)  # replace with your image variable
-
-            with col2:
-                st.subheader("Startup Funding Dashboard")
-                st.write("""
-            An interactive Streamlit dashboard that visualizes startup funding trends in India. Explore investments by year, funding rounds, sectors, and investor profiles.
-            """)
-                st.markdown(
-                    "[Live App](https://iswjcdzc4zzeabay4becrb.streamlit.app/) | [GitHub Repo](https://github.com/Sudiptagiri24/startup-dashboard)")
-                st.write("""
-            **Features:**
-            - **Overall Analysis:** Total, maximum, and average investments; funded startup count; month-over-month funding trend graph.  
-            - **Investor Analysis:** Insights on any investor - biggest investments, sectors, cities, rounds, and year-wise trends.  
-            - **StartUp Mode:** Placeholder for startup-specific deep-dive (coming soon).  
-
-            **Tech Stack:** Python, Pandas, Matplotlib, Streamlit
-            """)
-
-            st.write("---")
-
-            # You can duplicate the above block for more projects
+            with cols[index % 3]:
+                if img_base64:
+                    st.markdown(f"""
+                    <div style="
+                        background-color: #1E1E1E;
+                        padding: 20px;
+                        border-radius: 15px;
+                        margin-bottom: 30px;
+                        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+                        text-align: center;
+                        transition: transform 0.3s ease;
+                    ">
+                        <img src="data:image/png;base64,{img_base64}" 
+                                style="width:100%;height:180px;border-radius:10px;object-fit:cover;">
+                            <h4 style="margin-top:15px;color:#00BFFF;">{project['title']}</h4>
+                            <p style="font-size:15px;color:#ccc;">{project['description']}</p>
+                            <p style="font-size:13px;color:#aaa;"><b>Tech:</b> {project['tech']}</p>
+                            <a href="{project['demo']}" target="_blank" style="text-decoration:none;margin-right:10px;">
+                                <button style="padding:6px 12px;border:none;border-radius:5px;background-color:#00BFFF;color:white;cursor:pointer;">Live Demo</button>
+                            </a>
+                            <a href="{project['github']}" target="_blank" style="text-decoration:none;">
+                                <button style="padding:6px 12px;border:1px solid #00BFFF;border-radius:5px;background-color:transparent;color:#00BFFF;cursor:pointer;">GitHub</button>
+                            </a>
+                        </div>
+                        """, unsafe_allow_html=True)
+                else:
+                    st.warning(f"⚠️ Image not found: {project['image']}")
 
     if selected == 'Contact':
         with st.container():

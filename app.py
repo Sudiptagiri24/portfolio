@@ -99,12 +99,14 @@ with st.container():
             with col1:
                 st.markdown("### Skills")
                 st.write("""
-    - **Programming:** Python, C++, SQL  
-    - **ML & AI:** Scikit-Learn, TensorFlow, PyTorch  
-    - **Data Visualization:** Tableau, Power BI, Matplotlib  
-    - **Web Development:** Streamlit, Flask  
-    - **Computer Vision & NLP:** YOLO, CNNs, Transformers  
-    """)
+                - **Programming & Tools:** Python, C++, SQL, Git, Tableau, Power BI  
+                - **Machine Learning:** Regression, Classification, Clustering, XGBoost, Random Forest, SVM  
+                - **Deep Learning & Computer Vision:** CNNs, LSTM, Transformer, TensorFlow, PyTorch, OpenCV, YOLOv5  
+                - **Natural Language Processing:** TF-IDF, Word2Vec, LangChain, RAG, Prompt Engineering  
+                - **Data Visualization & Analytics:** Pandas, Matplotlib, Streamlit, Flask  
+                - **Deployment & Cloud:** Docker, MLflow, REST APIs, Oracle Cloud (familiar)
+            """)
+
 
                 st.markdown("### Education")
                 st.write("""
@@ -112,15 +114,13 @@ with st.container():
     - **C.K. Pithawala College of Engg. & Tech.** – B.E., Grade: 9.08  
     """)
 
-                st.markdown("### Projects")
-                st.write("""
-    - Movie Recommender System  
-    - Fashion Discovery Engine  
-    - Deep Learning-based Computer Vision Models  
-    """)
 
                 st.markdown("### Vision")
-                st.write("Leverage AI and data science to build innovative solutions with real-world impact.")
+                st.write("""
+                To bridge the gap between intelligent systems and real-world usability by creating practical, data-driven solutions.  
+                I aim to contribute to impactful projects that leverage AI, automation, and analytics to make technology more accessible, scalable, and human-centered.
+                """)
+
 
             # Right Column: Lottie Animation + Highlights
             with col2:
@@ -137,7 +137,7 @@ with st.container():
     
 if selected == 'Projects':
     with st.container():
-        st.header("🚀 My Projects")
+        # st.header("🚀 My Projects")
         st.write("---")
 
         # Define project data
@@ -225,54 +225,54 @@ if selected == 'Projects':
                 else:
                     st.warning(f"⚠️ Image not found: {project['image']}")
 
-    if selected == 'Contact':
-        with st.container():
-            st.header("Get in Touch")
-            st.write("Feel free to reach out for collaborations, projects, or just to say hi! 😊")
+if selected == 'Contact':
+    with st.container():
+        st.header("Get in Touch")
+        st.write("Feel free to reach out for collaborations, projects, or just to say hi! 😊")
 
-            col1, col2 = st.columns([1, 2])  # Lottie left, contact info + form right
+        col1, col2 = st.columns([1, 2])  # Lottie left, contact info + form right
 
-            # Left Column: Lottie Animation
-            with col1:
-                st_lottie(lottie_contact, height=500)
+        # Left Column: Lottie Animation
+        with col1:
+            st_lottie(lottie_contact, height=500)
 
-            # Right Column: Contact Info + Form
-            with col2:
-                social_icons_data = {
-                    "LinkedIn": ["https://www.linkedin.com/in/sudipta-giri-992857153/","https://cdn-icons-png.flaticon.com/128/3536/3536505.png"],  # original color
-                    "GitHub": ["https://github.com/Sudiptagiri24", "https://cdn-icons-png.flaticon.com/128/733/733553.png"],  # white GitHub icon
-                    "Kaggle": ["https://www.kaggle.com/sudiptagiriiitkgp", "https://www.kaggle.com/static/images/site-logo.svg"],
-                    "LeetCode": ["https://leetcode.com/u/sudiptagiri/","https://cdn-icons-png.flaticon.com/128/4997/4997543.png"], # white LeetCode icon
-                    "Email": ["mailto:sudiptagiri4@gmail.com", "https://cdn-icons-png.flaticon.com/128/732/732200.png"]
-                    # white Email icon
-                }
+        # Right Column: Contact Info + Form
+        with col2:
+            social_icons_data = {
+                "LinkedIn": ["https://www.linkedin.com/in/sudipta-giri-992857153/","https://cdn-icons-png.flaticon.com/128/3536/3536505.png"],  # original color
+                "GitHub": ["https://github.com/Sudiptagiri24", "https://cdn-icons-png.flaticon.com/128/733/733553.png"],  # white GitHub icon
+                "Kaggle": ["https://www.kaggle.com/sudiptagiriiitkgp", "https://www.kaggle.com/static/images/site-logo.svg"],
+                "LeetCode": ["https://leetcode.com/u/sudiptagiri/","https://cdn-icons-png.flaticon.com/128/4997/4997543.png"], # white LeetCode icon
+                "Email": ["mailto:sudiptagiri4@gmail.com", "https://cdn-icons-png.flaticon.com/128/732/732200.png"]
+                # white Email icon
+            }
 
-                st.write("### Connect with me:")
+            st.write("### Connect with me:")
 
-                # Create columns for the icons
-                cols = st.columns(len(social_icons_data))
+            # Create columns for the icons
+            cols = st.columns(len(social_icons_data))
 
-                for i, (platform, data) in enumerate(social_icons_data.items()):
-                    url, icon_url = data
-                    with cols[i]:
-                        st.markdown(f"""
-                        <a href="{url}" target="_blank">
-                            <img src="{icon_url}" width="40" style="margin:5px;">
-                        </a>
-                        """, unsafe_allow_html=True)
+            for i, (platform, data) in enumerate(social_icons_data.items()):
+                url, icon_url = data
+                with cols[i]:
+                    st.markdown(f"""
+                    <a href="{url}" target="_blank">
+                        <img src="{icon_url}" width="40" style="margin:5px;">
+                    </a>
+                    """, unsafe_allow_html=True)
 
-                st.write("##")
-                st.subheader("Or send me a message directly:")
+            st.write("##")
+            st.subheader("Or send me a message directly:")
 
-                # Formsubmit form for direct email
-                st.markdown("""
-    <form action="https://formsubmit.co/sudiptagiri4@gmail.com" method="POST" target="_blank">
-      <input type="text" name="name" placeholder="Your Name" required style="width:100%;padding:8px;margin-bottom:5px;"><br>
-      <input type="email" name="email" placeholder="Your Email" required style="width:100%;padding:8px;margin-bottom:5px;"><br>
-      <textarea name="message" placeholder="Your Message" required style="width:100%;padding:8px;margin-bottom:5px;"></textarea><br>
-      <button type="submit" style="padding:10px 20px;">Send Message</button>
-    </form>
-    """, unsafe_allow_html=True)
+            # Formsubmit form for direct email
+            st.markdown("""
+<form action="https://formsubmit.co/sudiptagiri4@gmail.com" method="POST" target="_blank">
+    <input type="text" name="name" placeholder="Your Name" required style="width:100%;padding:8px;margin-bottom:5px;"><br>
+    <input type="email" name="email" placeholder="Your Email" required style="width:100%;padding:8px;margin-bottom:5px;"><br>
+    <textarea name="message" placeholder="Your Message" required style="width:100%;padding:8px;margin-bottom:5px;"></textarea><br>
+    <button type="submit" style="padding:10px 20px;">Send Message</button>
+</form>
+""", unsafe_allow_html=True)
 
 
 

@@ -159,6 +159,14 @@ if selected == 'Projects':
                 "tech": "Python, Streamlit, LangChain, Hugging Face, YouTube Transcript API"
             },
             {
+                "title": "Real Estate Intelligence Platform",
+                "image": "images/Real Estate Intelligence Platform.png",
+                "description": "Real Estate Intelligence Platform is a smart web app that uses machine learning and data analytics to predict property prices, analyze market trends, and recommend similar apartments-helping users make informed real estate decisions quickly and confidently.",
+                "github": "https://github.com/Sudiptagiri24/Real-Estate-Intelligence-Platform.git",
+                "demo": "http://13.201.168.98:8501/",
+                "tech": "Python, Streamlit, Scikit-learn, Pandas, NumPy, Matplotlib, Seaborn, AWS EC2, Git, GitHub"
+            },
+            {
                 "title": "Object Detection with YOLO",
                 "image": "images/object_detection_yolo.png",
                 "description": "This project performs object detection and annotation on images using a custom-trained YOLO model, along with the Supervision library for visualization.",

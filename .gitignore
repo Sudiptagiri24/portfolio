@@ -1,1 +1,13 @@
-.idea/
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+venv/
+.env
+
+# macOS
+.DS_Store
+
+# Streamlit
+.streamlit/
